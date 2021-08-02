@@ -2,10 +2,11 @@ import React from 'react';
 
 import Task from './Task';
 import { TASK_STATE_ARCHIVED, TASK_STATE_INBOX, TASK_STATE_PINNED } from '../../lib/constants';
+import { COMPONENTS_FOLDER } from '../../lib/constants-storybook';
 
 export default {
   component: Task,
-  title: 'Task',
+  title: `${COMPONENTS_FOLDER}Task`,
 };
 
 const Template = args => <Task {...args} />;

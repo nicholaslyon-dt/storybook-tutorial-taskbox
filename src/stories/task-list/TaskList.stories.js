@@ -3,10 +3,11 @@ import React from 'react';
 import { PureTaskList } from './TaskList';
 import * as TaskStories from '../task/Task.stories';
 import { TASK_STATE_PINNED } from '../../lib/constants';
+import { COMPONENTS_FOLDER } from '../../lib/constants-storybook';
 
 const defaultProperties = {
   component: PureTaskList,
-  title: 'Task List',
+  title: `${COMPONENTS_FOLDER}Task List`,
   decorators: [story => <div style={{ padding: '3rem' }}>{story()}</div>],
   text: {
     pinnedTaskTitle: 'Task 6 (pinned)'
