@@ -1,10 +1,11 @@
 import React from 'react';
 
-import TaskList from './TaskList';
+import { PureTaskList } from './TaskList';
 import * as TaskStories from '../task/Task.stories';
+import { TASK_STATE_PINNED } from '../../lib/constants';
 
 const defaultProperties = {
-  component: TaskList,
+  component: PureTaskList,
   title: 'Task List',
   decorators: [story => <div style={{ padding: '3rem' }}>{story()}</div>],
   text: {
@@ -14,7 +15,7 @@ const defaultProperties = {
 
 export default defaultProperties;
 
-const Template = args => <TaskList {...args} />;
+const Template = args => <PureTaskList {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
@@ -36,7 +37,7 @@ WithPinnedTasks.args = {
   // Inherited data coming from the Default story.
   tasks: [
     ...Default.args.tasks.slice(0, 5),
-    { id: '6', title: defaultProperties.text.pinnedTaskTitle, state: 'TASK_PINNED' },
+    { id: '6', title: defaultProperties.text.pinnedTaskTitle, state: TASK_STATE_PINNED },
   ],
 };
 
